@@ -43,6 +43,9 @@ public class SkillService {
         public void  deleteSkill(int id){
         skillRepo.deleteById(id);
     }
+         public void saveSkill(SkillModel skill){
+        skillRepo.save(skill);
+    }
 }
     
 
