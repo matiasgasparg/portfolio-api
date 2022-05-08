@@ -20,22 +20,23 @@ public class EducacionModel {
     @Id
    @Column (unique= true ,nullable= false)
     public int ideducacion;
-    public String titulo;
-    public Date fechafin;
-    public String institucion;
-    public String institucionurl;
-    public String fotourl;
-
+    private String titulo;
+    private Date fechafin;
+    private String institucion;
+    private String institucionurl;
+    private String fotourl;
+    private int persona;
     public EducacionModel() {
     }
 
-    public EducacionModel(int ideducacion, String titulo, Date fechafin, String institucion, String institucionurl, String fotourl) {
+    public EducacionModel(int ideducacion, String titulo, Date fechafin, String institucion, String institucionurl, String fotourl, int persona) {
         this.ideducacion = ideducacion;
         this.titulo = titulo;
         this.fechafin = fechafin;
         this.institucion = institucion;
         this.institucionurl = institucionurl;
         this.fotourl = fotourl;
+        this.persona = persona;
     }
 
     public int getIdeducacion() {
@@ -86,9 +87,18 @@ public class EducacionModel {
         this.fotourl = fotourl;
     }
 
+    public int getPersona() {
+        return persona;
+    }
+
+    public void setPersona(int persona) {
+        this.persona = persona;
+    }
+
     @Override
     public String toString() {
-        return "EducacionModel{" + "ideducacion=" + ideducacion + ", titulo=" + titulo + ", fechafin=" + fechafin + ", institucion=" + institucion + ", institucionurl=" + institucionurl + ", fotourl=" + fotourl + '}';
+        return "EducacionModel{" + "ideducacion=" + ideducacion + ", titulo=" + titulo + ", fechafin=" + fechafin + ", institucion=" + institucion + ", institucionurl=" + institucionurl + ", fotourl=" + fotourl + ", persona=" + persona + '}';
     }
+
     
 }

@@ -23,15 +23,16 @@ public class RedesModel {
       private String nombre;
       private String url;
       private String fotourl;
-
+      private int persona;
     public RedesModel() {
     }
 
-    public RedesModel(int idred, String nombre, String url, String fotourl) {
+    public RedesModel(int idred, String nombre, String url, String fotourl, int persona) {
         this.idred = idred;
         this.nombre = nombre;
         this.url = url;
         this.fotourl = fotourl;
+        this.persona = persona;
     }
 
     public int getIdred() {
@@ -66,9 +67,18 @@ public class RedesModel {
         this.fotourl = fotourl;
     }
 
+    public int getPersona() {
+        return persona;
+    }
+
+    public void setPersona(int persona) {
+        this.persona = persona;
+    }
+
     @Override
     public String toString() {
-        return "RedesModel{" + "idred=" + idred + ", nombre=" + nombre + ", url=" + url + ", fotourl=" + fotourl + '}';
+        return "RedesModel{" + "idred=" + idred + ", nombre=" + nombre + ", url=" + url + ", fotourl=" + fotourl + ", persona=" + persona + '}';
     }
+
       
 }

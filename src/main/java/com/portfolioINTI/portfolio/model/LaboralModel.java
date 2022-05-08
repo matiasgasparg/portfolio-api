@@ -19,18 +19,19 @@ import javax.persistence.Table;
 public class LaboralModel {
     @Id
    @Column (unique= true ,nullable= false)
-    public int idlaboral;
+    private int idlaboral;
     private String puesto;
     private String descripcion;
     private String empresa;
     private Date inicio;
     private Date fin;
     private String fotourl;
+    private int persona;
 
     public LaboralModel() {
     }
 
-    public LaboralModel(int idlaboral, String puesto, String descripcion, String empresa, Date inicio, Date fin, String fotourl) {
+    public LaboralModel(int idlaboral, String puesto, String descripcion, String empresa, Date inicio, Date fin, String fotourl, int persona) {
         this.idlaboral = idlaboral;
         this.puesto = puesto;
         this.descripcion = descripcion;
@@ -38,8 +39,8 @@ public class LaboralModel {
         this.inicio = inicio;
         this.fin = fin;
         this.fotourl = fotourl;
+        this.persona = persona;
     }
-    
 
     public int getIdlaboral() {
         return idlaboral;
@@ -97,11 +98,19 @@ public class LaboralModel {
         this.fotourl = fotourl;
     }
 
+    public int getPersona() {
+        return persona;
+    }
+
+    public void setPersona(int persona) {
+        this.persona = persona;
+    }
+
     @Override
     public String toString() {
-        return "LaboralModel{" + "idlaboral=" + idlaboral + ", puesto=" + puesto + ", descripcion=" + descripcion + ", empresa=" + empresa + ", inicio=" + inicio + ", fin=" + fin + ", fotourl=" + fotourl + '}';
+        return "LaboralModel{" + "idlaboral=" + idlaboral + ", puesto=" + puesto + ", descripcion=" + descripcion + ", empresa=" + empresa + ", inicio=" + inicio + ", fin=" + fin + ", fotourl=" + fotourl + ", persona=" + persona + '}';
     }
-    
+
     
     
 }

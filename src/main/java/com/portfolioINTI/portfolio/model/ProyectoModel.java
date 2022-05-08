@@ -14,32 +14,34 @@ import javax.persistence.Table;
  * @author walke
  */
 @Entity
-@Table (name="skill")
-public class SkillModel {
-        @Id
+@Table (name="proyecto")
+public class ProyectoModel {
+    @Id
     //@GeneratedValue(strategy=GenerationType.IDENTITY)  
     @Column (unique= true ,nullable= false)
-        public int idskill;
+     public int idproyecto;
+        
         private String titulo;
-        private int dominio ;
+        private String descripcion;
+        private String url;
         private int persona;
-
-    public SkillModel() {
+    public ProyectoModel() {
     }
 
-    public SkillModel(int idskill, String titulo, int dominio, int persona) {
-        this.idskill = idskill;
+    public ProyectoModel(int idproyecto, String titulo, String descripcion, String url, int persona) {
+        this.idproyecto = idproyecto;
         this.titulo = titulo;
-        this.dominio = dominio;
+        this.descripcion = descripcion;
+        this.url = url;
         this.persona = persona;
     }
 
-    public int getIdskill() {
-        return idskill;
+    public int getIdproyecto() {
+        return idproyecto;
     }
 
-    public void setIdskill(int idskill) {
-        this.idskill = idskill;
+    public void setIdproyecto(int idproyecto) {
+        this.idproyecto = idproyecto;
     }
 
     public String getTitulo() {
@@ -50,12 +52,20 @@ public class SkillModel {
         this.titulo = titulo;
     }
 
-    public int getDominio() {
-        return dominio;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDominio(int dominio) {
-        this.dominio = dominio;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public int getPersona() {
@@ -68,10 +78,7 @@ public class SkillModel {
 
     @Override
     public String toString() {
-        return "SkillModel{" + "idskill=" + idskill + ", titulo=" + titulo + ", dominio=" + dominio + ", persona=" + persona + '}';
+        return "ProyectoModel{" + "idproyecto=" + idproyecto + ", titulo=" + titulo + ", descripcion=" + descripcion + ", url=" + url + ", persona=" + persona + '}';
     }
 
-  
-     
-        
 }
