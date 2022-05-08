@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author walke
  */
 @RestController
-@RequestMapping ("/api/persona")
+@RequestMapping ("/api/personas")
 public class PersonaController {
     
     @Autowired
