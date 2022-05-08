@@ -4,8 +4,8 @@
  */
 package com.portfolioINTI.portfolio.controller;
 
-import com.portfolioINTI.portfolio.model.SkillModel;
-import com.portfolioINTI.portfolio.service.SkillService;
+import com.portfolioINTI.portfolio.model.RedesModel;
+import com.portfolioINTI.portfolio.service.RedesService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,43 +24,43 @@ import org.springframework.web.bind.annotation.RestController;
  * @author walke
  */
 @RestController
-@RequestMapping("/api/skills")
-public class SkillController {
+@RequestMapping("/api/redes")
+public class RedesController {
     
     @Autowired
-    SkillService skillService;
+    RedesService redesService;
     
     
     @GetMapping 
-    public List<SkillModel>findAll(){
-        return skillService.getAll();
+    public List<RedesModel>findAll(){
+        return redesService.getAll();
     }
     @GetMapping("/{id}")
-    public ResponseEntity <SkillModel>getById(@PathVariable (value="id")int id) {
+    public ResponseEntity <RedesModel>getById(@PathVariable (value="id")int id) {
         
-        return skillService.getById(id);
+        return redesService.getById(id);
         
     }
     @PutMapping("/{id}")
-    public ResponseEntity<SkillModel> update(@PathVariable(value="id")int id,@Validated @RequestBody SkillModel skill){
-        if(id==skill.idskill){
-            SkillModel skillNew= skillService.save(skill);
-            return ResponseEntity.ok().body(skillNew);
+    public ResponseEntity<RedesModel> update(@PathVariable(value="id")int id,@Validated @RequestBody RedesModel redes){
+        if(id==redes.idred){
+            RedesModel redesNew= redesService.save(redes);
+            return ResponseEntity.ok().body(redesNew);
         }
         else{
             return ResponseEntity.badRequest().build();
         }
     }
     @PostMapping ("/")
-       public String createSkill (@RequestBody SkillModel skill){
-       skillService.saveSkill(skill);
-       return "La Skill fue creada correctamente";
+       public String createRedes (@RequestBody RedesModel redes){
+       redesService.saveRedes(redes);
+       return "La Red Social fue creada correctamente";
    }
       @DeleteMapping("/{id}")
    
-   public String deleteSkill(@PathVariable int id){
-       skillService.deleteSkill(id);
-       return "El skill fue eliminado correctamente";
+   public String deleteRedes(@PathVariable int id){
+       redesService.deleteRedes(id);
+       return "La red fue eliminada correctamente";
    }
    
 }
