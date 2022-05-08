@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class LaboralModel {
     @Id
    @Column (unique= true ,nullable= false)
-    private int idlaboral;
+    public int idlaboral;
     private String puesto;
     private String descripcion;
     private String empresa;
