@@ -4,7 +4,7 @@
  */
 package com.portfolioINTI.portfolio.repo;
 
-import com.portfolioINTI.portfolio.model.PersonaModel;
+import com.portfolioINTI.portfolio.model.SkillModel;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author walke
  */
 @Repository
-public interface Personarepo extends CrudRepository<PersonaModel,Integer> {
-     
+public interface Skillrepo extends CrudRepository<SkillModel,Integer> {
+    
 }
