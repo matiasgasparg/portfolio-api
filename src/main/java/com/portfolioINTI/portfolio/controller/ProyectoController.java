@@ -61,6 +61,6 @@ public class ProyectoController {
    
    public String deleteProyecto(@PathVariable int id){
        proyectoService.deleteProyecto(id);
-       return "El proyecto fue eliminado correctamente";
+       return "El proyecto fue eliminadx correctamente";
    }
 }
