@@ -7,8 +7,7 @@ package com.portfolioINTI.portfolio.controller;
 import com.portfolioINTI.portfolio.model.ProyectoModel;
 import com.portfolioINTI.portfolio.service.ProyectoService;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
