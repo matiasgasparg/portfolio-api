@@ -5,6 +5,7 @@
 package com.portfolioINTI.portfolio.repo;
 
 import com.portfolioINTI.portfolio.model.PersonaModel;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +15,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface Personarepo extends CrudRepository<PersonaModel,Integer> {
-     
+PersonaModel findByUsername(String username);
 }

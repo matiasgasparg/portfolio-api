@@ -18,6 +18,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PersonaService {
+    
+   
     @Autowired
     
     Personarepo personaRepo;
@@ -36,7 +38,13 @@ public class PersonaService {
         }
         
     }    
+   
     public PersonaModel save(PersonaModel persona){
         return personaRepo.save(persona);
     }
+
+    public PersonaModel getByUsername(String username){
+        return personaRepo.findByUsername(username);
+    }
+     
 }

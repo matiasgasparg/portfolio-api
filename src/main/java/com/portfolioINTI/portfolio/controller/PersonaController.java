@@ -39,6 +39,11 @@ public class PersonaController {
         return personaService.getById(id);
     }
     
+    @PutMapping
+    public PersonaModel save(@Validated @RequestBody PersonaModel persona){
+        return personaService.save(persona);
+    }
+    
     @PutMapping("/{id}")
     
     public ResponseEntity<PersonaModel> update(@PathVariable(value="id")int id,@Validated @RequestBody PersonaModel persona){

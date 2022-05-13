@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,8 +24,8 @@ import lombok.Setter;
 @Table (name="persona")
 public class PersonaModel {
     @Id
-    //@GeneratedValue(strategy=GenerationType.IDENTITY)  
-    @Column (unique= true ,nullable= false)
+   @GeneratedValue(strategy=GenerationType.IDENTITY)  
+    //@Column (unique= true ,nullable= false)
         public int idpersona;
         
         private String nombre;
@@ -37,11 +38,13 @@ public class PersonaModel {
         private String fotourl;
         private String username;
         private String password;
+        @Transient
+        private String token;
 
     public PersonaModel() {
     }
 
-    public PersonaModel(int idpersona, String nombre, String apellido, String correo, String titulo, String telefono, String ubicacion, String acerca, String fotourl, String username, String password) {
+    public PersonaModel(int idpersona, String nombre, String apellido, String correo, String titulo, String telefono, String ubicacion, String acerca, String fotourl, String username, String password, String token) {
         this.idpersona = idpersona;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -53,6 +56,7 @@ public class PersonaModel {
         this.fotourl = fotourl;
         this.username = username;
         this.password = password;
+        this.token = token;
     }
 
     public int getIdpersona() {
@@ -143,15 +147,19 @@ public class PersonaModel {
         this.password = password;
     }
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     @Override
     public String toString() {
-        return "PersonaModel{" + "idpersona=" + idpersona + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", titulo=" + titulo + ", telefono=" + telefono + ", ubicacion=" + ubicacion + ", acerca=" + acerca + ", fotourl=" + fotourl + ", username=" + username + ", password=" + password + '}';
+        return "PersonaModel{" + "idpersona=" + idpersona + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", titulo=" + titulo + ", telefono=" + telefono + ", ubicacion=" + ubicacion + ", acerca=" + acerca + ", fotourl=" + fotourl + ", username=" + username + ", password=" + password + ", token=" + token + '}';
     }
-        
-                
-                
-        
-        
+
     
     
 }
