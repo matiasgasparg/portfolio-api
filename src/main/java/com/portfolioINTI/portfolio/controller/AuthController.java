@@ -48,7 +48,7 @@ public class AuthController {
 				.signWith(SignatureAlgorithm.HS512,
 						secretKey.getBytes()).compact();
 
-		return "AP " + token;
+		return "Bearer " + token;
    }
     
     @PostMapping 
