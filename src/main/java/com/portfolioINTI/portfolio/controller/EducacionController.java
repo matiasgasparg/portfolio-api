@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author walke
  */
 @RestController
-@RequestMapping("/api/Educaciones")
+@RequestMapping("/api/educacion")
 public class EducacionController {
      @Autowired
     private EducacionService educacionService;
