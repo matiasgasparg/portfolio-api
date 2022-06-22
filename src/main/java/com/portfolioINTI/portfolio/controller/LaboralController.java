@@ -52,10 +52,10 @@ public class LaboralController {
             return ResponseEntity.badRequest().build();
         }
     }
-      @PostMapping ("/")
-       public String createLaboral (@RequestBody LaboralModel laboral){
-       laboralService.saveLaboral(laboral);
-       return "La Laboral fue creada correctamente";
+      @PostMapping 
+      
+       public LaboralModel save (@Validated @RequestBody LaboralModel laboral){
+       return laboralService.save(laboral);
    }
       @DeleteMapping("/{id}")
    
