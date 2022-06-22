@@ -21,16 +21,16 @@ public class PortfolioApplication {
 	@Configuration
 	class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Override
+		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 			http.csrf().disable()
 				.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 				.authorizeRequests()
 				.antMatchers(HttpMethod.GET, "/**").permitAll()
-				.antMatchers(HttpMethod.POST, "/api/login").permitAll()
-				.antMatchers(HttpMethod.POST, "/**").authenticated()
-				.antMatchers(HttpMethod.PUT, "/**").authenticated()
-				.antMatchers(HttpMethod.DELETE, "/**").authenticated();
+                                .antMatchers(HttpMethod.POST, "/api/login").permitAll()
+                                .antMatchers(HttpMethod.POST, "/**").authenticated()
+                                .antMatchers(HttpMethod.PUT, "/**").authenticated()
+                                .antMatchers(HttpMethod.DELETE, "/**").authenticated();
 				
 		}
 	}
