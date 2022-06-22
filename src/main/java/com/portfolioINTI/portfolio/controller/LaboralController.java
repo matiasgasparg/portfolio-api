@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @CrossOrigin("*")
 @RestController
-@RequestMapping ("/api/laborales")
+@RequestMapping ("/api/laboral")
 public class LaboralController {
     @Autowired
     private LaboralService laboralService;
