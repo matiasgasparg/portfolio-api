@@ -7,6 +7,8 @@ package com.portfolioINTI.portfolio.model;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,7 +20,7 @@ import javax.persistence.Table;
 @Table (name="laboral")
 public class LaboralModel {
     @Id
-   @Column (unique= true ,nullable= false)
+   @GeneratedValue(strategy=GenerationType.IDENTITY)  
     public int idlaboral;
     private String puesto;
     private String descripcion;
