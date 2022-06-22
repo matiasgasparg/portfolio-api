@@ -4,35 +4,41 @@
  */
 package com.portfolioINTI.portfolio.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  *
  * @author walke
  */
+@Getter @Setter
+
 @Entity
 @Table (name="laboral")
 public class LaboralModel {
     @Id
    @GeneratedValue(strategy=GenerationType.IDENTITY)  
     public int idlaboral;
+    
     private String puesto;
     private String descripcion;
     private String empresa;
-    private Date inicio;
-    private Date fin;
+    private LocalDate inicio;
+    private LocalDate fin;
     private String fotourl;
     private int persona;
 
     public LaboralModel() {
     }
 
-    public LaboralModel(int idlaboral, String puesto, String descripcion, String empresa, Date inicio, Date fin, String fotourl, int persona) {
+    public LaboralModel(int idlaboral, String puesto, String descripcion, String empresa, LocalDate inicio, LocalDate fin, String fotourl, int persona) {
         this.idlaboral = idlaboral;
         this.puesto = puesto;
         this.descripcion = descripcion;
@@ -42,7 +48,17 @@ public class LaboralModel {
         this.fotourl = fotourl;
         this.persona = persona;
     }
-
+    public LaboralModel(String puesto, String descripcion, String empresa, LocalDate inicio, LocalDate fin, String fotourl, int persona ) {
+        
+        this.puesto = puesto;
+        this.descripcion = descripcion;
+        this.empresa = empresa;
+        this.inicio = inicio;
+        this.fin = fin;
+        this.fotourl = fotourl;
+        this.persona = persona;
+    }
+    
     public int getIdlaboral() {
         return idlaboral;
     }
@@ -75,19 +91,19 @@ public class LaboralModel {
         this.empresa = empresa;
     }
 
-    public Date getInicio() {
+    public LocalDate getInicio() {
         return inicio;
     }
 
-    public void setInicio(Date inicio) {
+    public void setInicio(LocalDate inicio) {
         this.inicio = inicio;
     }
 
-    public Date getFin() {
+    public LocalDate getFin() {
         return fin;
     }
 
-    public void setFin(Date fin) {
+    public void setFin(LocalDate fin) {
         this.fin = fin;
     }
 
