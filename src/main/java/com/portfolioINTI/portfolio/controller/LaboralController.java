@@ -33,7 +33,7 @@ public class LaboralController {
     
     @GetMapping 
     
-    public List<LaboralModel> findAll(){
+    public List<LaboralModel> getAll(){
         return laboralService.getAll();
     }
     @GetMapping ("/{id}")
@@ -52,11 +52,11 @@ public class LaboralController {
             return ResponseEntity.badRequest().build();
         }
     }
-      @PostMapping 
-      
-       public LaboralModel save (@Validated @RequestBody LaboralModel laboral){
-       return laboralService.save(laboral);
-   }
+        @PostMapping
+    public LaboralModel save(@Validated @RequestBody LaboralModel laboral) {
+        return laboralService.save(laboral);
+    }
+
       @DeleteMapping("/{id}")
    
    public String deleteLaboral(@PathVariable int id){
