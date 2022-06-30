@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.portfolioINTI.portfolio.model;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +22,7 @@ import lombok.Setter;
 @Table (name="laboral")
 public class LaboralModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (unique= true ,nullable= false)
     public int idlaboral;
     
     private String puesto;
