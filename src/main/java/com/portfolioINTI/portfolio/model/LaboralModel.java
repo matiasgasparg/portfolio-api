@@ -23,7 +23,7 @@ import lombok.Setter;
 @Table (name="laboral")
 public class LaboralModel {
     @Id
-   @GeneratedValue(strategy=GenerationType.IDENTITY)  
+   @Column (unique= true ,nullable= false)
     public int idlaboral;
     
     private String puesto;
