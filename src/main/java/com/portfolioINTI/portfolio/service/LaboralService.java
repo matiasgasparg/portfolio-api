@@ -44,5 +44,7 @@ public class LaboralService {
         public void  deleteLaboral(int id){
         laboralRepo.deleteById(id);
     }
-
+  public void saveLaboral(LaboralModel laboral){
+        laboralRepo.save(laboral);
+    }
 }
