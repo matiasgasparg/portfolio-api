@@ -57,11 +57,15 @@ public class LaboralController {
        laboralService.saveLaboral(laboral);
        return "La Laboral fue creada correctamente";
    }
-      @DeleteMapping("/{id}")
-   
-   public String deleteLaboral(@PathVariable int id){
-       laboralService.deleteLaboral(id);
-       return "El laboral fue eliminado correctamente";
-   }
-    
+        @DeleteMapping("/{id}")
+    public ResponseEntity<LaboralModel> delete(@PathVariable int id) {
+        boolean ok = laboralService.delete(id);
+        if (ok) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.internalServerError().build();
+        }
+
+
+    }
 }

@@ -47,4 +47,12 @@ public class LaboralService {
   public void saveLaboral(LaboralModel laboral){
         laboralRepo.save(laboral);
     }
+   public boolean delete(int id) {
+        try {
+            laboralRepo.deleteById(id); 
+            return true;
+        } catch(Exception err){
+            return false;
+        }
+    } 
 }
