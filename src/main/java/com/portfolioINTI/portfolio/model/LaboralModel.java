@@ -58,9 +58,13 @@ public class LaboralModel {
         this.fotourl = fotourl;
         this.persona = persona;
     }
+    @Override
+    public String toString() {
+        return "LaboralModel{" + "idlaboral=" + idlaboral + ", puesto=" + puesto + ", descripcion=" + descripcion + ", empresa=" + empresa + ", inicio=" + inicio + ", fin=" + fin + ", fotourl=" + fotourl + ", persona=" + persona + '}';
+    }
     
     public int getIdlaboral() {
-        return idlaboral;
+        return this.idlaboral;
     }
 
     public void setIdlaboral(int idlaboral) {
@@ -68,7 +72,7 @@ public class LaboralModel {
     }
 
     public String getPuesto() {
-        return puesto;
+        return this.puesto;
     }
 
     public void setPuesto(String puesto) {
@@ -76,7 +80,7 @@ public class LaboralModel {
     }
 
     public String getDescripcion() {
-        return descripcion;
+        return this.descripcion;
     }
 
     public void setDescripcion(String descripcion) {
@@ -84,7 +88,7 @@ public class LaboralModel {
     }
 
     public String getEmpresa() {
-        return empresa;
+        return this.empresa;
     }
 
     public void setEmpresa(String empresa) {
@@ -92,7 +96,7 @@ public class LaboralModel {
     }
 
     public LocalDate getInicio() {
-        return inicio;
+        return this.inicio;
     }
 
     public void setInicio(LocalDate inicio) {
@@ -100,7 +104,7 @@ public class LaboralModel {
     }
 
     public LocalDate getFin() {
-        return fin;
+        return this.fin;
     }
 
     public void setFin(LocalDate fin) {
@@ -108,7 +112,7 @@ public class LaboralModel {
     }
 
     public String getFotourl() {
-        return fotourl;
+        return this.fotourl;
     }
 
     public void setFotourl(String fotourl) {
@@ -116,17 +120,14 @@ public class LaboralModel {
     }
 
     public int getPersona() {
-        return persona;
+        return this.persona;
     }
 
     public void setPersona(int persona) {
         this.persona = persona;
     }
 
-    @Override
-    public String toString() {
-        return "LaboralModel{" + "idlaboral=" + idlaboral + ", puesto=" + puesto + ", descripcion=" + descripcion + ", empresa=" + empresa + ", inicio=" + inicio + ", fin=" + fin + ", fotourl=" + fotourl + ", persona=" + persona + '}';
-    }
+ 
 
     
     
