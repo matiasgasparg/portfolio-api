@@ -52,7 +52,7 @@ public class LaboralController {
             return ResponseEntity.badRequest().build();
         }
     }
-      @PostMapping 
+      @PostMapping ("/")
        public String createLaboral (@RequestBody LaboralModel laboral){
        laboralService.saveLaboral(laboral);
        return "La Laboral fue creada correctamente";
