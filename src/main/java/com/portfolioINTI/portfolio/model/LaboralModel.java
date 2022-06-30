@@ -29,15 +29,15 @@ public class LaboralModel {
     private String puesto;
     private String descripcion;
     private String empresa;
-    private LocalDate inicio;
-    private LocalDate fin;
+    private String inicio;
+    private String fin;
     private String fotourl;
     private int persona;
 
     public LaboralModel() {
     }
 
-    public LaboralModel(int idlaboral, String puesto, String descripcion, String empresa, LocalDate inicio, LocalDate fin, String fotourl, int persona) {
+    public LaboralModel(int idlaboral, String puesto, String descripcion, String empresa, String inicio, String fin, String fotourl, int persona) {
         this.idlaboral = idlaboral;
         this.puesto = puesto;
         this.descripcion = descripcion;
@@ -47,7 +47,7 @@ public class LaboralModel {
         this.fotourl = fotourl;
         this.persona = persona;
     }
-    public LaboralModel(String puesto, String descripcion, String empresa, LocalDate inicio, LocalDate fin, String fotourl, int persona ) {
+    public LaboralModel(String puesto, String descripcion, String empresa, String inicio, String fin, String fotourl, int persona ) {
         
         this.puesto = puesto;
         this.descripcion = descripcion;
@@ -94,19 +94,19 @@ public class LaboralModel {
         this.empresa = empresa;
     }
 
-    public LocalDate getInicio() {
+    public String getInicio() {
         return this.inicio;
     }
 
-    public void setInicio(LocalDate inicio) {
+    public void setInicio(String inicio) {
         this.inicio = inicio;
     }
 
-    public LocalDate getFin() {
+    public String getFin() {
         return this.fin;
     }
 
-    public void setFin(LocalDate fin) {
+    public void setFin(String fin) {
         this.fin = fin;
     }
 
