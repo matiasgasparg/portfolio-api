@@ -5,7 +5,6 @@
 package com.portfolioINTI.portfolio.model;
 
 import java.time.LocalDate;
-import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
