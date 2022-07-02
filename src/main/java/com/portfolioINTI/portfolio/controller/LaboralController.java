@@ -43,14 +43,9 @@ public class LaboralController {
     
     @PutMapping("/{id}")
     
-    public ResponseEntity<LaboralModel> update(@PathVariable(value="id")int id,@Validated @RequestBody LaboralModel laboral){
-        if(id==laboral.idlaboral){
-            LaboralModel laboralNew= laboralService.save(laboral);
-            return ResponseEntity.ok().body(laboralNew);
-        }
-        else{
-            return ResponseEntity.badRequest().build();
-        }
+    public void update(@RequestBody LaboralModel laboral){
+        laboralService.save(laboral);
+       
     }
       @PostMapping ("/")
        public String createLaboral (@RequestBody LaboralModel laboral){
