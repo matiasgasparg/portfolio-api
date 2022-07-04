@@ -43,15 +43,18 @@ public class LaboralController {
     
     @PutMapping("/{id}")
     
-    public void update(@RequestBody LaboralModel laboral){
-        laboralService.save(laboral);
-       
+    public ResponseEntity<LaboralModel> update(@PathVariable(value = "id") int id, @Validated @RequestBody LaboralModel laboral) {
+        if (id == laboral.idlaboral) {
+            LaboralModel laboralNew = laboralService.save(laboral);
+            return ResponseEntity.ok().body(laboralNew);
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
       @PostMapping ("/")
-       public String createLaboral (@RequestBody LaboralModel laboral){
-       laboralService.saveLaboral(laboral);
-       return "La Laboral fue creada correctamente";
-   }
+      public LaboralModel save (@Validated @RequestBody LaboralModel laboral) {
+        return laboralService.save(laboral);
+    }
         @DeleteMapping("/{id}")
     public ResponseEntity<LaboralModel> delete(@PathVariable int id) {
         boolean ok = laboralService.delete(id);

@@ -38,15 +38,15 @@ public class LaboralService {
             return ResponseEntity.notFound().build();
         }
     }
-         public LaboralModel save(LaboralModel laboral){
-        return laboralRepo.save(laboral);
-    }
+    
         public void  deleteLaboral(int id){
         laboralRepo.deleteById(id);
     }
-  public void saveLaboral(LaboralModel laboral){
-        laboralRepo.save(laboral);
+
+  public  LaboralModel save(LaboralModel laboral){
+        return laboralRepo.save(laboral);
     }
+
    public boolean delete(int id) {
         try {
             laboralRepo.deleteById(id); 
