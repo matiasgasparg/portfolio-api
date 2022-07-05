@@ -8,7 +8,6 @@ import com.portfolioINTI.portfolio.model.LaboralModel;
 import com.portfolioINTI.portfolio.service.LaboralService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -44,17 +43,16 @@ public class LaboralController {
     
     @PutMapping("/{id}")
     
-    public ResponseEntity<LaboralModel> update( @RequestBody LaboralModel laboral) {
-     
-            LaboralModel laboralNew = laboralService.save(laboral);
-            return new ResponseEntity<>(laboralNew, HttpStatus.OK);
+    public void update(@RequestBody LaboralModel laboral){
+        laboralService.save(laboral);
        
     }
       @PostMapping ("/")
-      public LaboralModel save (@Validated @RequestBody LaboralModel laboral) {
-        return laboralService.save(laboral);
-    }
-        @DeleteMapping("/{id}") 
+       public String createLaboral (@RequestBody LaboralModel laboral){
+       laboralService.save(laboral);
+       return "La Laboral fue creada correctamente";
+   }
+        @DeleteMapping("/{id}")
     public ResponseEntity<LaboralModel> delete(@PathVariable int id) {
         boolean ok = laboralService.delete(id);
         if (ok) {
