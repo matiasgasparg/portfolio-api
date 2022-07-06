@@ -39,9 +39,14 @@ public class EducacionService {
          public EducacionModel save(EducacionModel educacion){
         return educacionRepo.save(educacion);
     }
-        public void  deleteEducacion(int id){
-        educacionRepo.deleteById(id);
-    }
+    public boolean delete(int id) {
+        try {
+            educacionRepo.deleteById(id); 
+            return true;
+        } catch(Exception err){
+            return false;
+        }
+    } 
          public void saveEducacion(EducacionModel educacion){
         educacionRepo.save(educacion);
     }

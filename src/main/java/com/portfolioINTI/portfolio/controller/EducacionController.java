@@ -49,14 +49,16 @@ public class EducacionController {
     }
       @PostMapping ("/")
        public String createEducacion (@RequestBody EducacionModel educacion){
-       educacionService.saveEducacion(educacion);
+       educacionService.save(educacion);
        return "La Educacion fue creada correctamente";
    }
-      @DeleteMapping("/{id}")
-   
-   public String deleteEducacion(@PathVariable int id){
-       educacionService.deleteEducacion(id);
-       return "El educacion fue eliminado correctamente";
-   }
+   @DeleteMapping("/{id}")
+   public ResponseEntity<EducacionModel> delete(@PathVariable int id) {
+       boolean ok = educacionService.delete(id);
+       if (ok) {
+           return ResponseEntity.ok().build();
+       } else {
+           return ResponseEntity.internalServerError().build();
+       }
     
 }
