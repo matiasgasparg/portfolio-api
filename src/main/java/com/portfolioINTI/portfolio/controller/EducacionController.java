@@ -43,14 +43,9 @@ public class EducacionController {
     
     @PutMapping("/{id}")
     
-    public ResponseEntity<EducacionModel> update(@PathVariable(value="id")int id,@Validated @RequestBody EducacionModel educacion){
-        if(id==educacion.ideducacion){
-            EducacionModel educacionNew= educacionService.save(educacion);
-            return ResponseEntity.ok().body(educacionNew);
-        }
-        else{
-            return ResponseEntity.badRequest().build();
-        }
+    public void update(@RequestBody EducacionModel educacion){
+        educacionService.save(educacion);
+       
     }
       @PostMapping ("/")
        public String createEducacion (@RequestBody EducacionModel educacion){
