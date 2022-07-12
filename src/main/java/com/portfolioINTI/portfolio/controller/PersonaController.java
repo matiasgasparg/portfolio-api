@@ -45,6 +45,7 @@ public class PersonaController {
     @PostMapping    
     public PersonaModel save(@Validated @RequestBody PersonaModel persona){
         return personaService.save(persona);
+        
     }
     @PutMapping("/{id}")
     

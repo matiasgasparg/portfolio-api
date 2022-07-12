@@ -40,10 +40,12 @@ public class ProyectoService {
          public ProyectoModel save(ProyectoModel proyecto){
         return proyectoRepo.save(proyecto);
     }
-        public void  deleteProyecto(int id){
-        proyectoRepo.deleteById(id);
-    }
-         public void saveProyecto(ProyectoModel proyecto){
-        proyectoRepo.save(proyecto);
-    }
+    public boolean delete(int id) {
+        try {
+            proyectoRepo.deleteById(id); 
+            return true;
+        } catch(Exception err){
+            return false;
+        }
+    }  
 }
