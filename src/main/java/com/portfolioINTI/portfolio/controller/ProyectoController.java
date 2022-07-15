@@ -33,7 +33,7 @@ public class ProyectoController {
     
     
     @GetMapping 
-    public List<ProyectoModel>findAll(){
+    public List<ProyectoModel>getAll(){
         return proyectoService.getAll();
     }
     @GetMapping("/{id}")
