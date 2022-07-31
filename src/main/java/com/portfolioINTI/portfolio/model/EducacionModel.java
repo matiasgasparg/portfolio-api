@@ -4,9 +4,10 @@
  */
 package com.portfolioINTI.portfolio.model;
 
-import java.util.Date;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,10 +19,10 @@ import javax.persistence.Table;
 @Table (name="educacion")
 public class EducacionModel {
     @Id
-   @Column (unique= true ,nullable= false)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)  
     public int ideducacion;
     private String titulo;
-    private Date fechafin;
+    private String fechafin;
     private String institucion;
     private String institucionurl;
     private String fotourl;
@@ -29,7 +30,7 @@ public class EducacionModel {
     public EducacionModel() {
     }
 
-    public EducacionModel(int ideducacion, String titulo, Date fechafin, String institucion, String institucionurl, String fotourl, int persona) {
+    public EducacionModel(int ideducacion, String titulo, String fechafin, String institucion, String institucionurl, String fotourl, int persona) {
         this.ideducacion = ideducacion;
         this.titulo = titulo;
         this.fechafin = fechafin;
@@ -55,11 +56,11 @@ public class EducacionModel {
         this.titulo = titulo;
     }
 
-    public Date getFechafin() {
+    public String getFechafin() {
         return fechafin;
     }
 
-    public void setFechafin(Date fechafin) {
+    public void setFechafin(String fechafin) {
         this.fechafin = fechafin;
     }
 

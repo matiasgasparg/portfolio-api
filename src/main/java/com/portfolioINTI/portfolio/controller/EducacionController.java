@@ -9,7 +9,7 @@ import com.portfolioINTI.portfolio.service.EducacionService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,8 +23,9 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author walke
  */
+@CrossOrigin("*")
 @RestController
-@RequestMapping("/api/Educaciones")
+@RequestMapping("/api/educacion")
 public class EducacionController {
      @Autowired
     private EducacionService educacionService;
@@ -41,25 +42,24 @@ public class EducacionController {
     
     @PutMapping("/{id}")
     
-    public ResponseEntity<EducacionModel> update(@PathVariable(value="id")int id,@Validated @RequestBody EducacionModel educacion){
-        if(id==educacion.ideducacion){
-            EducacionModel educacionNew= educacionService.save(educacion);
-            return ResponseEntity.ok().body(educacionNew);
-        }
-        else{
-            return ResponseEntity.badRequest().build();
-        }
+    public void update(@RequestBody EducacionModel educacion){
+        educacionService.save(educacion);
+       
     }
       @PostMapping ("/")
        public String createEducacion (@RequestBody EducacionModel educacion){
-       educacionService.saveEducacion(educacion);
+       educacionService.save(educacion);
        return "La Educacion fue creada correctamente";
    }
-      @DeleteMapping("/{id}")
-   
-   public String deleteEducacion(@PathVariable int id){
-       educacionService.deleteEducacion(id);
-       return "El educacion fue eliminado correctamente";
-   }
+   @DeleteMapping("/{id}")
+   public ResponseEntity<EducacionModel> delete(@PathVariable int id) {
+       boolean ok = educacionService.delete(id);
+       if (ok) {
+           return ResponseEntity.ok().build();
+       } else {
+           return ResponseEntity.internalServerError().build();
+       }
     
 }
+}
+

@@ -3,9 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.portfolioINTI.portfolio.model;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,8 +17,7 @@ import javax.persistence.Table;
 @Table (name="proyecto")
 public class ProyectoModel {
     @Id
-    //@GeneratedValue(strategy=GenerationType.IDENTITY)  
-    @Column (unique= true ,nullable= false)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)  
      public int idproyecto;
         
         private String titulo;
@@ -36,6 +35,13 @@ public class ProyectoModel {
         this.persona = persona;
     }
 
+    
+    public ProyectoModel( String titulo, String descripcion, String url, int persona) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.url = url;
+        this.persona = persona;
+    }
     public int getIdproyecto() {
         return idproyecto;
     }
