@@ -56,7 +56,19 @@ public class PersonaModel {
         this.password = password;
         this.token = token;
     }
-
+    public PersonaModel( String nombre, String apellido, String correo, String titulo, String telefono, String ubicacion, String acerca, String fotourl, String username, String password, String token) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.titulo = titulo;
+        this.telefono = telefono;
+        this.ubicacion = ubicacion;
+        this.acerca = acerca;
+        this.fotourl = fotourl;
+        this.username = username;
+        this.password = password;
+        this.token = token;
+    }
     public int getIdpersona() {
         return idpersona;
     }
